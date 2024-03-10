@@ -1,21 +1,15 @@
 # markdown-it-mermaid
 
-Mermaid plugin for markdown-it. (Forked from iradb2000/markdown-it-mermaid)
+Mermaid plugin for markdown-it. (Forked from DatatracCorporation/markdown-it-mermaid)
 
-- Update Mermaid to 8.5!
-- Support all mermaid diagrams
-- Add external title support
-- Use stable id for mermaid (good for static sites)
+-   Update Mermaid to 10.9!
+-   Support all mermaid diagrams
+-   Add external title support
+-   Use stable id for mermaid (good for static sites)
 
-This version uses a different syntax to support mermaid.  The syntax
+This version uses a different syntax to support mermaid. The syntax
 uses the syntax highlighting notation by putting the word `mermaid`
 directly after the opening fence marker.
-
-## Installation
-
-```
-npm install @DatatracCorporation/markdown-it-mermaid
-```
 
 ## Usage
 
@@ -42,15 +36,15 @@ but either `~~~` or ` ``` ` works.
 
 ## Titles
 
-Mermaid does not support titles on the diagrams today.  We have added an
-external title that you can use.  Include the title on the code fence
+Mermaid does not support titles on the diagrams today. We have added an
+external title that you can use. Include the title on the code fence
 line after the word `mermaid` and it will be rendered as a div inside
-the parent div as a sibling to the svg image.  The title element has a
+the parent div as a sibling to the svg image. The title element has a
 class of `mermaid-title` so you can style the title to fit your app.
 
 We use:
 
-~~~css
+```css
 /* image container */
 div.mermaid {
     width: fit-content;
@@ -71,7 +65,7 @@ div.mermaid {
     margin: auto;
     display: block;
 }
-~~~
+```
 
 ### Customize mermaid
 
@@ -104,7 +98,7 @@ md.use(MarkdownItMermaid,{
 ### Test
 
 At this time, there are no unit tests since mermaid has to run in a
-browser (uses document apis).  At some point in the future, we might go
+browser (uses document apis). At some point in the future, we might go
 with a headless browser.
 
 ### Distribution

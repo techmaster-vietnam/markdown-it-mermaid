@@ -1,30 +1,27 @@
 {
-  "name": "@datatraccorporation/markdown-it-mermaid",
-  "version": "0.5.0",
-  "description": "Plugin to render mermaid diagrams in markdown-it",
-  "main": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DatatracCorporation/markdown-it-mermaid.git"
-  },
-  "keywords": [
-    "markdown-it-plugin",
-    "markdown-it",
-    "markdown",
-    "mermaid",
-    "flowchart",
-    "sequence"
-  ],
-  "author": "Datatrac Corporation",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DatatracCorporation/markdown-it-mermaid/issues"
-  },
-  "homepage": "https://github.com/DatatracCorporation/markdown-it-mermaid#readme",
-  "devDependencies": {
-    "markdown-it": "^11.0.0"
-  },
-  "dependencies": {
-    "mermaid": "^8.5.2"
-  }
+	"name": "@techmaster-vn/markdown-it-mermaid",
+	"version": "0.1.0",
+	"description": "Plugin to render mermaid diagrams in markdown-it",
+	"main": "src/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/techmaster-vietnam/markdown-it-mermaid.git"
+	},
+	"keywords": [
+		"markdown-it-plugin",
+		"markdown-it",
+		"markdown",
+		"mermaid",
+		"flowchart",
+		"sequence"
+	],
+	"author": "techmaster-vn",
+	"license": "MIT",
+	"homepage": "https://github.com/techmaster-vietnam/markdown-it-mermaid#readme",
+	"devDependencies": {
+		"markdown-it": "^14.0.0"
+	},
+	"dependencies": {
+		"mermaid": "^10.9.0"
+	}
 }
