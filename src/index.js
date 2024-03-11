@@ -19,6 +19,7 @@ const MermaidChart = async (code, title = "") => {
       return `<div class="mermaid">${title}${svg}</div>`;
     }
   } catch (err) {
+    console.log("MermaidChart ~ err:", err);
     return `<pre style="color: rgb(220 38 38)" class="mermaid-error">${htmlEntities(
       err.name
     )}: ${htmlEntities(err.message)}</pre>`;
@@ -43,20 +44,24 @@ const MermaidPlugIn = (md, opts) => {
       if (spc > 0) {
         title = token.info.slice(spc + 1);
       }
-      MermaidChart(code, title).then((value) => {
-        const intervalId = setInterval(() => {
-          let placeholderDiv = document.getElementById(placeholderId);
-          if (placeholderDiv == null)
-            placeholderDiv = document.getElementById(placeholderId);
-          else {
-            const parentDiv = placeholderDiv.parentNode;
-            const docDiagram = domParser.parseFromString(value, "text/html");
-            const diagramDiv = docDiagram.body.firstChild;
-            parentDiv.replaceChild(diagramDiv, placeholderDiv);
-            clearInterval(intervalId);
-          }
-        }, 100);
-      });
+      MermaidChart(code, title)
+        .then((value) => {
+          const intervalId = setInterval(() => {
+            let placeholderDiv = document.getElementById(placeholderId);
+            if (placeholderDiv == null)
+              placeholderDiv = document.getElementById(placeholderId);
+            else {
+              const parentDiv = placeholderDiv.parentNode;
+              const docDiagram = domParser.parseFromString(value, "text/html");
+              const diagramDiv = docDiagram.body.firstChild;
+              parentDiv.replaceChild(diagramDiv, placeholderDiv);
+              clearInterval(intervalId);
+            }
+          }, 100);
+        })
+        .catch((err) => {
+          console.log("MermaidPlugIn ~ err:", err);
+        });
       return `<div id="${placeholderId}">${code}</div>`;
     }
     return defaultRenderer(tokens, idx, opts, env, self);
